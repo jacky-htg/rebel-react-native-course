@@ -27,7 +27,7 @@ const Login = props => {
   // };
 
   return (
-    <Container style={Style.container}>
+    <View style={Style.container}>
       <View style={Style.imageContainer}>
         <Image style={Style.imageBg} source={imageTopBg} />
         <Image style={Style.logo} source={logo} />
@@ -63,7 +63,7 @@ const Login = props => {
           onPress={() => Actions.register({text: judul})}
         />
       </ScrollView>
-    </Container>
+    </View>
   );
 };
 
