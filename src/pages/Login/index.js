@@ -6,6 +6,7 @@ import {
   Button,
   Image,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
@@ -15,11 +16,11 @@ import imageTopBg from '../../assets/images/Blob_BG.png';
 import logo from '../../assets/images/logo.png';
 
 const Login = props => {
-  // const [judul, setJudul] = useState('Hello again');
-  // const [deskripsi, setDeskripsi] = useState('Welcome Back');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  let judul = 'Hello again';
-  let deskripsi = 'Welcome Back';
+  const judul = 'Hello again';
+  const deskripsi = 'Welcome Back';
 
   // const onPressChange = () => {
   //   setJudul('Rebelworks');
@@ -32,24 +33,36 @@ const Login = props => {
         <Image style={Style.logo} source={logo} />
       </View>
 
-      <View style={Style.bottomContainer}>
+      <ScrollView
+        style={Style.bottomContainer}
+        contentContainerStyle={Style.bottomContentContainer}
+        bounces={false}>
         <Text>{judul}</Text>
         <Text>{deskripsi}</Text>
 
         <View style={Style.inputContainer}>
-          <TextInput style={Style.input} />
-          <TextInput style={Style.input} />
+          <TextInput
+            style={Style.input}
+            placeholder={'Email'}
+            onChangeText={text => setEmail(text)}
+          />
+          <TextInput
+            style={Style.input}
+            placeholder={'Password'}
+            secureTextEntry
+            onChangeText={text => setPassword(text)}
+          />
         </View>
 
-        <TouchableOpacity style={Style.buttonSignIn}>
+        <TouchableOpacity style={Style.buttonSignIn} onPress={null}>
           <Text style={Style.textSignIn}>Sign In</Text>
         </TouchableOpacity>
 
         <Button
-          title={'to Register'}
+          title={'Sign Up'}
           onPress={() => Actions.register({text: judul})}
         />
-      </View>
+      </ScrollView>
     </Container>
   );
 };

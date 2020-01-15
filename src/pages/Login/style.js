@@ -6,10 +6,14 @@ export default {
   },
 
   bottomContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
     marginTop: 30,
     paddingHorizontal: 30,
+    // borderWidth: 1,
+  },
+
+  bottomContentContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   inputContainer: {
@@ -19,6 +23,7 @@ export default {
   input: {
     height: 40,
     width: Dimensions.get('window').width - 60,
+    paddingHorizontal: 10,
     marginBottom: 10,
     borderColor: 'gray',
     borderWidth: 1,
