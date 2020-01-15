@@ -1,14 +1,17 @@
 import React from 'react';
-import {SafeAreaView, View, ScrollView} from 'react-native';
+import {Router, Stack, Scene} from 'react-native-router-flux';
 
-import Login from './src/Login';
-import Register from './src/Register';
+import Login from './src/pages/Login';
+import Register from './src/pages/Register';
 
 const App = props => {
   return (
-    <SafeAreaView>
-      <Login />
-    </SafeAreaView>
+    <Router>
+      <Stack key="root">
+        <Scene key="login" component={Login} title="Login" />
+        <Scene key="register" component={Register} title="Register" />
+      </Stack>
+    </Router>
   );
 };
 
