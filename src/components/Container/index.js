@@ -1,8 +1,12 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 
 const Container = props => {
-  return <SafeAreaView>{props.children}</SafeAreaView>;
+  return (
+    <SafeAreaView>
+      <View style={props.style}>{props.children}</View>
+    </SafeAreaView>
+  );
 };
 
 export default Container;

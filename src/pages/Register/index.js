@@ -9,7 +9,7 @@ const Register = props => {
   return (
     <Container>
       <View style={Style.container}>
-        <Text>Ini Register</Text>
+        <Text>Ini {props.text}</Text>
         <View style={Style.inputContainer}>
           <TextInput style={Style.input} />
         </View>
@@ -20,3 +20,9 @@ const Register = props => {
 };
 
 export default Register;
+
+/* Props datang dari mana?
+1. Navigasi
+2. Component
+3. Redux
+*/
