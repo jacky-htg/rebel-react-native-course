@@ -8,7 +8,7 @@ const App = props => {
   return (
     <Router>
       <Stack key="root" hideNavBar>
-        <Scene key="login" component={Login} title="Login" initial />
+        <Scene key="login" component={Login} initial />
         <Scene key="register" component={Register} title="Register" />
       </Stack>
     </Router>

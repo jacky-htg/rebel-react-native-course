@@ -43,11 +43,13 @@ const Login = props => {
         <View style={Style.inputContainer}>
           <TextInput
             style={Style.input}
+            value={email}
             placeholder={'Email'}
             onChangeText={text => setEmail(text)}
           />
           <TextInput
             style={Style.input}
+            value={password}
             placeholder={'Password'}
             secureTextEntry
             onChangeText={text => setPassword(text)}
