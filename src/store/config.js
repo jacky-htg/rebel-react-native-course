@@ -3,7 +3,11 @@ import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 
-const rootReducer = null;
+import UserReducer from './User/user.reducer';
+
+const rootReducer = combineReducers({
+  user: UserReducer,
+});
 
 const asyncStore = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
