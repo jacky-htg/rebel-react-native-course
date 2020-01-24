@@ -1,5 +1,9 @@
+import {Actions} from 'react-native-router-flux';
+
 export default {
   login: data => {
+    Actions.home();
+
     return {
       type: 'LOGIN',
       payload: data,
