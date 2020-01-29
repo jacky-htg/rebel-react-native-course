@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -11,14 +11,12 @@ import {
 import {Actions} from 'react-native-router-flux';
 import {connect} from 'react-redux';
 
-import Container from '../../components/Container';
 import Style from './style';
 import imageTopBg from '../../assets/images/Blob_BG.png';
 import logo from '../../assets/images/logo.png';
 import {actions} from '../../store';
 
 const mapStateToProps = state => {
-  console.log('state log', state);
   return {
     userId: state.user.id,
     token: state.user.token,
@@ -39,10 +37,19 @@ const Login = props => {
   const judul = 'Hello again';
   const deskripsi = 'Welcome Back';
 
+  useEffect(() => {
+    if (props.token) {
+      Actions.home();
+    } else {
+      Actions.login();
+    }
+  }, [props.token]);
+
   const onPressLogin = () => {
     props.login({
       email: email,
       password: password,
+      token: '123123123',
     });
   };
 

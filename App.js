@@ -11,8 +11,8 @@ const App = props => {
     <Redux>
       <Router>
         <Stack key="root" hideNavBar>
-          <Scene key="login" component={Login} initial />
-          <Scene key="register" component={Register} title="Register" />
+          <Scene key="login" component={Login} />
+          <Scene key="register" component={Register} title="Register" initial />
           <Scene key="home" component={Home} title="Home" />
         </Stack>
       </Router>

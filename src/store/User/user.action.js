@@ -10,6 +10,12 @@ export default {
     };
   },
 
+  logout: data => {
+    return {
+      type: 'LOGOUT',
+    };
+  },
+
   getToken: data => {
     return {
       type: 'GET_TOKEN',

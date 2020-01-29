@@ -21,8 +21,14 @@ export default (state = initialState, action) => {
 
     case 'LOGIN':
       return Object.assign({}, state, {
-        data: action.payload,
+        data: {
+          email: action.payload.email,
+        },
+        token: action.payload.token,
       });
+
+    case 'LOGOUT':
+      return initialState;
 
     default:
       return state;

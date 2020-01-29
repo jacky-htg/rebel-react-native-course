@@ -13,7 +13,7 @@ const Register = props => {
         <View style={Style.inputContainer}>
           <TextInput style={Style.input} />
         </View>
-        <Button title={'to Login'} onPress={Actions.pop} />
+        <Button title={'to Login'} onPress={Actions.login} />
       </View>
     </Container>
   );
