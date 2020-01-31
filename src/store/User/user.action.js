@@ -1,8 +1,26 @@
 import {Actions} from 'react-native-router-flux';
 
 export default {
+  getPokemon: () => {
+    return dispatch => {
+      fetch('https://pokeapi.co/api/v2/pokemon/ditto/', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then(response => response.json())
+        .then(response => {
+          return dispatch({
+            type: 'GET_POKEMON',
+            payload: response,
+          });
+        });
+    };
+  },
+
   login: data => {
-    Actions.home();
+    Actions.reset('home');
 
     return {
       type: 'LOGIN',
@@ -11,6 +29,8 @@ export default {
   },
 
   logout: data => {
+    Actions.reset('splash');
+
     return {
       type: 'LOGOUT',
     };

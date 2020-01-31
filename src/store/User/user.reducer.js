@@ -2,6 +2,7 @@ const initialState = {
   id: '',
   data: {},
   token: '',
+  pokemon: {},
 };
 
 export default (state = initialState, action) => {
@@ -19,6 +20,12 @@ export default (state = initialState, action) => {
         token: action.payload,
       };
 
+    case 'GET_POKEMON':
+      return {
+        ...state,
+        pokemon: action.payload,
+      };
+
     case 'LOGIN':
       return Object.assign({}, state, {
         data: {
@@ -28,7 +35,12 @@ export default (state = initialState, action) => {
       });
 
     case 'LOGOUT':
-      return initialState;
+      return {
+        id: '',
+        data: {},
+        token: '',
+        pokemon: {},
+      };
 
     default:
       return state;

@@ -37,14 +37,6 @@ const Login = props => {
   const judul = 'Hello again';
   const deskripsi = 'Welcome Back';
 
-  useEffect(() => {
-    if (props.token) {
-      Actions.home();
-    } else {
-      Actions.login();
-    }
-  }, [props.token]);
-
   const onPressLogin = () => {
     props.login({
       email: email,
